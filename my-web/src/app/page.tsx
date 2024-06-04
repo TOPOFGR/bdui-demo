@@ -1,7 +1,26 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Component, ComponentTypes } from "@/types";
+import Renderer from "@/Framework/Renderer";
 
-export default function Home() {
+const testJson: Component<{}> = {
+  type: ComponentTypes.Row,
+  id: "Row",
+};
+
+const getPageComponents = async () => {
+  const response = await fetch("http://localhost:4400/home", {
+    cache: "no-store",
+  });
+
+  const data = await response.json();
+
+  return data;
+};
+
+export default async function Home() {
+  const jsonData = await getPageComponents();
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -38,7 +57,9 @@ export default function Home() {
           priority
         />
       </div>
-
+      <div>
+        <Renderer component={jsonData} />
+      </div>
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
