@@ -1,5 +1,6 @@
 export enum ComponentTypes {
   Row = "ui-row",
+  Button = "mui-button",
 }
 
 export type Component<T> = {

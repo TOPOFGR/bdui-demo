@@ -10,10 +10,10 @@ export class AppService {
   getHomePage(): Component<HomePage> {
     return {
       id: 'main-homepage-container',
-      type: 'ui-row',
-      children: [],
+      type: 'mui-button',
+      // children: [],
       props: {
-        content: 'Este es el contenido de mi JSON',
+        children: 'Este es el contenido de mi JSON',
       },
     };
   }

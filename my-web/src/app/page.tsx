@@ -3,6 +3,11 @@ import styles from "./page.module.css";
 import { Component, ComponentTypes } from "@/types";
 import Renderer from "@/Framework/Renderer";
 
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
 const testJson: Component<{}> = {
   type: ComponentTypes.Row,
   id: "Row",
