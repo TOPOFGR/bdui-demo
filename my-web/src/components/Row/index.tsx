@@ -10,9 +10,9 @@ export type RowProps = {
 
 const Row: FC<RowProps> = ({ items }) => (
   <div className={styles.row}>
-    {items.map(({ id, ...otherProps }) => (
-      <div key={id} className={styles.item}>
-        <Renderer component={{ ...otherProps, id }} />
+    {items.map((itemProps) => (
+      <div key={itemProps.id} className={styles.item}>
+        <Renderer {...itemProps} />
       </div>
     ))}
   </div>

@@ -63,7 +63,7 @@ export default async function Home() {
         />
       </div>
       <div>
-        <Renderer component={jsonData} />
+        <Renderer {...jsonData} />
       </div>
       <div className={styles.grid}>
         <a
