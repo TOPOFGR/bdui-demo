@@ -1,6 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+import { BadRequestException, Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Component, HomePage } from './types';
+import { Component, Country, HomePage, HomePageQueryParams } from './types';
+
+const availableCountries: Array<string> = [Country.Argentina, Country.Uruguay];
 
 @Controller()
 export class AppController {
@@ -12,7 +14,11 @@ export class AppController {
   }
 
   @Get('home')
-  getHomePage(): Component<HomePage> {
-    return this.appService.getHomePage();
+  getHomePage(@Query() { country }: HomePageQueryParams): object {
+    if (!availableCountries.includes(country)) {
+      throw new BadRequestException();
+    }
+
+    return this.appService.getHomePage(country);
   }
 }

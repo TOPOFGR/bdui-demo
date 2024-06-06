@@ -1,20 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Component, ComponentTypes } from "@/types";
-import Renderer from "@/Framework/Renderer";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
-const testJson: Component<{}> = {
-  type: ComponentTypes.Row,
-  id: "Row",
-};
+import Framework from "@/Framework";
 
 const getPageComponents = async () => {
-  const response = await fetch("http://localhost:4400/home", {
+  const response = await fetch("http://localhost:4400/home?country=ar", {
     cache: "no-store",
   });
 
@@ -63,7 +57,7 @@ export default async function Home() {
         />
       </div>
       <div>
-        <Renderer {...jsonData} />
+        <Framework {...jsonData} />
       </div>
       <div className={styles.grid}>
         <a

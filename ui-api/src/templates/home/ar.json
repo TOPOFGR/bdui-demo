@@ -1,0 +1,30 @@
+{
+  "id": "main-homepage-container",
+  "type": "mui-card",
+  "children": [
+    {
+      "id": "button-row-pages",
+      "type": "ui-row",
+      "props": {
+        "items": [
+          {
+            "id": "provincia-button",
+            "type": "mui-button",
+            "props": {
+              "children": "Conoce donde encontrarnos en tu Provincia!",
+              "variant": "contained"
+            }
+          },
+          {
+            "id": "sumate-equipo-button",
+            "type": "mui-button",
+            "props": {
+              "children": "Sumate a nuestro equipo de trabajo!"
+            }
+          }
+        ],
+        "content": "Este es el contenido de mi JSON"
+      }
+    }
+  ]
+}

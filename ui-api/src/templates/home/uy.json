@@ -1,0 +1,21 @@
+{
+  "id": "main-homepage-container",
+  "type": "mui-card",
+  "children": [
+    {
+      "id": "button-row-pages",
+      "type": "ui-row",
+      "props": {
+        "items": [
+          {
+            "id": "provincia-button",
+            "type": "mui-button",
+            "props": {
+              "children": "Conoce nuestro local en Punta del Este"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

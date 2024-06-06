@@ -8,8 +8,6 @@ const Renderer: FC<Component<any>> = ({ type, props, id, children }) => {
 
   const newProps = { ...props, id };
 
-  console.log("children", children);
-
   if (children && children.length > 0) {
     return (
       <FrontendComponent {...newProps}>
@@ -19,8 +17,6 @@ const Renderer: FC<Component<any>> = ({ type, props, id, children }) => {
       </FrontendComponent>
     );
   }
-
-  console.log("Sin HIJOS", id);
 
   return <FrontendComponent {...newProps} />;
 };
