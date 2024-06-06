@@ -3,28 +3,43 @@
   "type": "mui-card",
   "children": [
     {
-      "id": "button-row-pages",
-      "type": "ui-row",
+      "id": "container-header",
+      "type": "mui-card-header",
       "props": {
-        "items": [
-          {
-            "id": "provincia-button",
-            "type": "mui-button",
-            "props": {
-              "children": "Conoce donde encontrarnos en tu Provincia!",
-              "variant": "contained"
-            }
-          },
-          {
-            "id": "sumate-equipo-button",
-            "type": "mui-button",
-            "props": {
-              "children": "Sumate a nuestro equipo de trabajo!"
-            }
-          }
-        ],
-        "content": "Este es el contenido de mi JSON"
+        "variant": "h1",
+        "color": "blue",
+        "title": "Bienvenido!"
       }
+    },
+    {
+      "id": "container-content",
+      "type": "mui-card-content",
+      "children": [
+        {
+          "id": "button-row-pages",
+          "type": "ui-row",
+          "props": {
+            "items": [
+              {
+                "id": "provincia-button",
+                "type": "mui-button",
+                "props": {
+                  "children": "Conoce donde encontrarnos en tu Provincia!",
+                  "variant": "contained"
+                }
+              },
+              {
+                "id": "sumate-equipo-button",
+                "type": "mui-button",
+                "props": {
+                  "children": "Sumate a nuestro equipo de trabajo!",
+                  "variant": "outlined"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

@@ -3,19 +3,35 @@
   "type": "mui-card",
   "children": [
     {
-      "id": "button-row-pages",
-      "type": "ui-row",
+      "id": "container-header",
+      "type": "mui-card-header",
       "props": {
-        "items": [
-          {
-            "id": "provincia-button",
-            "type": "mui-button",
-            "props": {
-              "children": "Conoce nuestro local en Punta del Este"
-            }
-          }
-        ]
+        "variant": "h1",
+        "color": "blue",
+        "title": "Bienvenido!"
       }
+    },
+    {
+      "id": "container-content",
+      "type": "mui-card-content",
+      "children": [
+        {
+          "id": "button-row-pages",
+          "type": "ui-row",
+          "props": {
+            "items": [
+              {
+                "id": "provincia-button",
+                "type": "mui-button",
+                "props": {
+                  "children": "Conoce nuestro local de Punta del Este!",
+                  "variant": "contained"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

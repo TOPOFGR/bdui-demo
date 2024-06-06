@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import styles from "./page.module.css";
 
 import "@fontsource/roboto/300.css";
@@ -6,19 +7,30 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Framework from "@/Framework";
+import { GetServerSideProps } from "next";
+import { Component } from "@/types";
 
-const getPageComponents = async () => {
-  const response = await fetch("http://localhost:4400/home?country=ar", {
-    cache: "no-store",
-  });
+type FrameworkResponse = Component<any>;
 
-  const data = await response.json();
+const getPageComponents = async (country: string) => {
+  const response = await fetch(
+    `http://localhost:4400/home?country=${country}`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  const data: FrameworkResponse = await response.json();
 
   return data;
 };
 
-export default async function Home() {
-  const jsonData = await getPageComponents();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { country: string | undefined };
+}) {
+  const jsonData = await getPageComponents(searchParams.country ?? "ar");
 
   return (
     <main className={styles.main}>
@@ -56,9 +68,7 @@ export default async function Home() {
           priority
         />
       </div>
-      <div>
-        <Framework {...jsonData} />
-      </div>
+      <Framework {...jsonData} />
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
