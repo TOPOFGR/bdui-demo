@@ -35,3 +35,18 @@ cd ui-api
 npm install
 npm run start:dev
 ```
+
+
+## Support
+Want to contribute yourself? Just upluad a pull request!
+
+## Stay in touch
+
+- Author - [Franco Galeano](https://www.linkedin.com/in/franco-galeano-609171161/)
+- Github - [@TOPOFGR](https://github.com/TOPOFGR)
+- Twitter / 𝕏 - [@TOPOFGRdev](https://x.com/TOPOFGRdev)
+
+
+## License
+
+BDUI-DEMO is [MIT licensed](LICENSE).
