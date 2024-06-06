@@ -38,7 +38,7 @@ npm run start:dev
 
 
 ## Support
-Want to contribute yourself? Just upluad a pull request!
+Want to contribute yourself? Just upload a pull request!
 
 ## Stay in touch
 
